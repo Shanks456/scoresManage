@@ -1,0 +1,32 @@
+<!--pages/teacher/teacher.wxml-->
+<view class="container">
+  <view class="subject-title">
+    当前选中的学科 ID: {{subjectId}}
+  </view>
+
+  <!-- 学生成绩列表 -->
+  <view class="scores-list">
+    <!-- 如果没有成绩 -->
+    <view wx:if="{{scores.length === 0}}" class="empty-state">
+      当前学科暂无成绩数据
+    </view>
+
+    <!-- 如果有成绩 -->
+    <view wx:if="{{scores.length > 0}}">
+      <view class="table-header">
+        <view class="table-cell">学号</view>
+        <view class="table-cell">姓名</view>
+        <view class="table-cell">成绩</view>
+        <view class="table-cell">评语</view>
+      </view>
+      <block wx:for="{{scores}}" wx:key="studentId">
+        <view class="table-row">
+          <view class="table-cell">{{item.studentId}}</view>
+          <view class="table-cell">{{item.studentName}}</view>
+          <view class="table-cell">{{item.score}}</view>
+          <view class="table-cell">{{item.comment}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

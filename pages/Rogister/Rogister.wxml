@@ -1,0 +1,40 @@
+<!-- pages/Rogister/Rogister.wxml -->
+<view class="container">
+  <view class="title">注册</view>
+  
+  <!-- 角色选择器 -->
+  <view class="form-group">
+    <picker mode="selector" bindchange="onRoleChange" range="{{roleLabels}}" value="{{roleIndex}}">
+      <view class="picker">
+        当前角色: {{roleLabels[roleIndex]}}
+      </view>
+    </picker>
+  </view>
+  
+  <!-- 姓名输入 -->
+  <view class="form-group">
+    <input class="input" placeholder="请输入姓名" bindinput="onNameInput" />
+  </view>
+
+  <!-- 教师编号输入 -->
+  <view class="form-group">
+    <input class="input" placeholder="请输入教师编号" bindinput="onTeacherIdInput" />
+  </view>
+
+  <!-- 账号输入 -->
+  <view class="form-group">
+    <input class="input" placeholder="请输入账号" bindinput="onAccountInput" />
+  </view>
+
+  <!-- 密码输入 -->
+  <view class="form-group">
+    <input class="input" placeholder="请输入密码" bindinput="onPasswordInput" type="password" />
+  </view>
+
+  <!-- 电话输入 -->
+  <view class="form-group">
+    <input class="input" placeholder="请输入电话（选填）" bindinput="onPhoneInput" />
+  </view>
+
+  <button class="register-button" bindtap="onRegister">注册</button>
+</view>

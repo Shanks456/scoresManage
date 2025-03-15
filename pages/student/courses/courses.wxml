@@ -1,0 +1,46 @@
+
+<view class="return-bar" bindtap="navigateBack">
+  <image src="/pages/images/6.png" class="return-icon" />
+  <text class="return-text">返回首页</text>
+</view>
+<!-- 科目列表 -->
+<scroll-view scroll-x class="subject-scroll">
+  <view 
+    wx:for="{{subjects}}" 
+    wx:key="id"
+    class="subject-item {{currentSubject && currentSubject.id === item.id ? 'active' : ''}}"
+    bindtap="onSubjectClick" 
+    data-subjectid="{{item.id}}"
+  >
+    {{item.subjectName}}
+  </view>
+</scroll-view>
+
+
+<view class="content-container">
+  <!-- 加载状态 -->
+  <view wx:if="{{loading}}" class="loading-box">
+    <image src="/pages/images/1.png" class="loading-icon"/>
+    <text>正在加载...</text>
+  </view>
+
+  <!-- 成绩展示 -->
+  <view wx:elif="{{scoreDetail}}" class="score-card">
+    <view class="header">
+      <text class="subject-name">{{currentSubject.subjectName}}</text>
+      <text class="update-time">更新时间: {{scoreDetail.updatedAt}}</text>
+    </view>
+    <view class="score-content">
+      <text class="label">分数:</text>
+      <text class="value">{{scoreDetail.score}}分</text>
+      <text class="label">评语:</text>
+      <text class="comment">{{scoreDetail.comment}}</text>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view wx:else class="empty-state">
+    <image src="/pages/images/1.png" class="empty-icon"/>
+    <text>请点击上方科目查看成绩</text>
+  </view>
+</view>

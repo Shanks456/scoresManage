@@ -1,0 +1,61 @@
+.container {
+  padding: 20px;
+}
+
+.instruction {
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.form-item {
+  margin-bottom: 15px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  color: red;
+  margin-right: 5px;
+}
+
+.input-field {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.picker {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}

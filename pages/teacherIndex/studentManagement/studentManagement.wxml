@@ -1,0 +1,23 @@
+<view class="container">
+  <text class="title">学生管理</text>
+  
+  <view class="search-container">
+    <input class="search-input" placeholder="搜索学生..." bindinput="onSearchInput" />
+    <button class="search-button" bindtap="onSearch">搜索</button>
+    <button class="add-button" bindtap="onAddStudent">添加学生</button>
+  </view>
+
+  <view class="student-list">
+    <text class="list-title">学生列表</text>
+    <block wx:for="{{studentsList}}" wx:key="id">
+      <view class="student-item">
+        <text>{{item.studentName}} - {{item.studentId}} - {{item.grade}}</text>
+        <view class="action-buttons">
+          <button data-id="{{item.id}}" bindtap="inputScore">录入成绩</button>
+          <button data-id="{{item.id}}" bindtap="modifyStudent">修改</button>
+          <button data-id="{{item.id}}" bindtap="deleteStudent">删除</button>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

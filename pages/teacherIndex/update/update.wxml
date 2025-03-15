@@ -1,0 +1,38 @@
+<view class="container">
+  <text class="instruction">请填写标*内容，其他选填</text>
+  
+  <view class="header">
+    <text class="title">学生信息</text>
+  </view>
+  
+  <view class="form">
+    <view class="form-item">
+      <view class="input-container">
+        <text class="label">*</text>考生名
+        <input class="input-field" placeholder="请输入考生名" data-field="studentName" bindinput="onInput" />
+      </view>
+    </view>
+    
+    <view class="form-item">
+      <view class="input-container">
+        <text class="label">*</text>学号
+        <input class="input-field" placeholder="请输入学号" data-field="studentId" bindinput="onInput" />
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="input-container">
+        <text class="label">*</text>年级
+        <picker mode="selector" range="{{grades}}" bindchange="onGradeChange">
+          <view class="picker">
+            {{selectedGrade ? selectedGrade : '请选择年级'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  
+  <view class="submit-container">
+    <button class="submit-button" bindtap="onSubmit">提交</button>
+  </view>
+</view>

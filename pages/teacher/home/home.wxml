@@ -1,0 +1,49 @@
+<view class="page">
+  <!-- 页头部分 -->
+  <view class="header">
+    <text class="header-title">教师首页内容</text>
+ 
+    <image src="/pages/images/19.png" mode="aspectFill" class="header-image" />
+    <custom-tab-bar 
+      selected="{{currentTab}}" 
+      color="#000000" 
+      selectedColor="#3CC51F" 
+      list="{{teacherTabItems}}"
+      bind:change="onTabChange" />
+  </view>
+
+  <!-- 功能按钮区 -->
+  <view class="container">
+    <view class="row">
+      <view class="item" bindtap="onNavigate" data-url="/pages/newPage1/newPage1">
+        <image src="/pages/images/1.png" class="icon"></image>
+        <text class="label">课程</text>
+      </view>
+      <view class="item" bindtap="onNavigate" data-url="/pages/teacherIndex/studentManagement/studentManagement">
+        <image src="/pages/images/2.png" class="icon"></image>
+        <text class="label">学生管理</text>
+      </view>
+      <view class="item" bindtap="onNavigate" data-url="/pages/teacherIndex/addStudent/addStudent">
+        <image src="/pages/images/3.png" class="icon"></image>
+        <text class="label">添加学生</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 成绩录入与统计信息 -->
+  <view class="actions">
+    <button type="default" class="record-btn" bindtap="onTapButton">成绩录入</button>
+    <view class="count">
+      <view class="t">
+        <text>累计记录成绩</text>
+      </view>
+      <view class="c">
+        <text class="count-number">5</text>
+        <text>次</text>
+      </view>
+      <view class="s">
+        <text class="message">工作辛苦啦，为你点赞</text>
+      </view>
+    </view>
+  </view>
+</view>

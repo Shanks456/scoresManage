@@ -1,0 +1,46 @@
+
+<view>
+  <!-- 学科列表 -->
+  <view class="subject-list">
+    <view class="subject-title">请选择学科：</view>
+    <block wx:for="{{subjects}}" wx:key="id">
+      <!-- 点击学科触发 chooseSubject -->
+      <view class="subject-item" bindtap="chooseSubject" data-id="{{item.id}}">
+        {{item.subjectName}}
+      </view>
+    </block>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 学生成绩列表 -->
+  <view class="scores-list">
+    <!-- 如果未选择科目，提示选择科目 -->
+    <view wx:if="{{!selectedSubjectId}}" class="empty-state">
+      请选择一个学科以查看成绩
+    </view>
+
+    <!-- 如果选择了科目，但没有成绩 -->
+    <view wx:if="{{selectedSubjectId && scores.length === 0}}" class="empty-state">
+      当前学科暂无成绩数据
+    </view>
+
+    <!-- 如果有科目并有成绩 -->
+    <view wx:if="{{selectedSubjectId && scores.length > 0}}">
+      <view class="table-header">
+        <view class="table-cell">学号</view>
+        <view class="table-cell">姓名</view>
+        <view class="table-cell">成绩</view>
+        <view class="table-cell">评语</view>
+      </view>
+      <block wx:for="{{scores}}" wx:key="studentId">
+        <view class="table-row">
+          <view class="table-cell">{{item.studentId}}</view>
+          <view class="table-cell">{{item.studentName}}</view>
+          <view class="table-cell">{{item.score}}</view>
+          <view class="table-cell">{{item.comment}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

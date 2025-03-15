@@ -1,0 +1,43 @@
+<!--pages/studentIndex/Profile/Profile.wxml-->
+<view class="profile-container">
+  <!-- 加载状态 -->
+  <view wx:if="{{loading}}" class="loading">
+    <image src="/pages/images/5.png" class="icon-loading" />
+    <text>正在加载个人信息...</text>
+  </view>
+
+  <!-- 错误状态 -->
+  <view wx:elif="{{error}}" class="error">
+    <image src="/pages/images/1.png" class="icon-error" />
+    <text>{{error}}</text>
+    <button class="btn-retry" bindtap="loadStudentDetail">重新加载</button>
+  </view>
+
+  <!-- 数据展示 -->
+  <view wx:else class="profile-card">
+    <view class="info-item">
+      <text class="label">姓名：</text>
+      <text class="value">{{studentDetail.studentName}}</text>
+    </view>
+    
+    <view class="info-item">
+      <text class="label">学号：</text>
+      <text class="value">{{studentDetail.studentId}}</text>
+    </view>
+
+    <view class="info-item">
+      <text class="label">年级：</text>
+      <text class="value">{{studentDetail.grade}}</text>
+    </view>
+
+    <view class="info-item">
+      <text class="label">联系方式：</text>
+      <text class="value">{{studentDetail.phone || '未填写'}}</text>
+    </view>
+
+    <view class="meta-info">
+      <text>注册时间：{{formatTime(studentDetail.createdAt)}}</text>
+      <text>最后更新：{{formatTime(studentDetail.updatedAt)}}</text>
+    </view>
+  </view>
+</view>

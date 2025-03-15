@@ -1,0 +1,13 @@
+
+<view class="container">
+  <!-- 输入框 -->
+  <textarea
+    placeholder="请输入内容"
+    class="textarea"
+    bindinput="onInput"
+    value="{{inputValue}}"
+  ></textarea>
+
+  <!-- 提交按钮 -->
+  <button class="submit-button" bindtap="onSubmit">提交</button>
+</view>

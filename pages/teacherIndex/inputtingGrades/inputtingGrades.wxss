@@ -1,0 +1,35 @@
+/* 文件路径: /pages/teacherIndex/inputtingGrades/inputtingGrades.wxss */
+
+.container {
+  padding: 20rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.student-info {
+  margin-bottom: 20rpx;
+}
+
+.form {
+  margin-bottom: 20rpx;
+}
+
+.picker {
+  padding: 20rpx;
+  background-color: #f4f4f4;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+button {
+  background-color: #007aff;
+  color: #ffffff;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+}

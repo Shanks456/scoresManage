@@ -1,0 +1,54 @@
+/* pages/teacher/courses/courses.wxss */
+
+.subject-list {
+  padding: 10px;
+}
+.subject-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.subject-item {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.subject-item:hover {
+  background-color: #e6e6e6;
+}
+
+
+.divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+
+.scores-list {
+  padding: 10px;
+}
+.table-header {
+  display: flex;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.table-row {
+  display: flex;
+  margin-bottom: 5px;
+}
+.table-cell {
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+}
+
+
+.empty-state {
+  text-align: center;
+  color: #888;
+  margin: 20px 0;
+}

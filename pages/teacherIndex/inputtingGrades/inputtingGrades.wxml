@@ -1,0 +1,21 @@
+<!-- /pages/teacherIndex/inputtingGrades/inputtingGrades.wxml -->
+<view class="container">
+  <text class="title">成绩录入</text>
+  <view class="student-info">
+    <text>学生姓名: {{studentName}}</text>
+    <text>班级: {{grade}}</text>
+  </view>
+
+  <view class="form">
+    <picker mode="selector" range="{{subjectsList}}" range-key="subjectName" bindchange="onSubjectChange">
+      <view class="picker">
+        请选择科目: {{selectedSubjectIndex !== null ? subjectsList[selectedSubjectIndex].subjectName : '未选择'}}
+      </view>
+    </picker>
+
+    <input placeholder="输入成绩 (0-100)" type="number" bindinput="onScoreInput" value="{{score}}" />
+    <textarea placeholder="输入评语（可选）" bindinput="onCommentInput" value="{{comment}}"></textarea>
+  </view>
+
+  <button bindtap="onSubmit">提交成绩</button>
+</view>

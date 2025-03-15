@@ -1,0 +1,30 @@
+<!--pages/teacher/profile/profile.wxml-->
+<view class="container">
+  <!-- 头像部分 -->
+  <view class="avatar">
+    <image class="avatar-image" src="/pages/images/1.png" />
+  </view>
+  <view class="username">欢迎，教师</view>
+
+  <!-- 功能列表 -->
+  <view class="feature-list">
+    <view class="feature-item" bindtap="about">
+      <view class="icon icon-about"></view>
+      <view class="feature-text">关于我们</view>
+    </view>
+    <view class="feature-item" bindtap="anounce">
+      <view class="icon icon-anounce"></view>
+      <view class="feature-text">公告</view>
+    </view>
+    <view class="feature-item" bindtap="suggest">
+      <view class="icon icon-suggest"></view>
+      <view class="feature-text">反馈与建议</view>
+    </view>
+    <!-- 新增联系客服 -->
+    <view class="feature-item">
+      <view class="icon icon-service"></view>
+      <view class="feature-text">联系客服</view>
+      <view class="contact-tip">9:00-18:00</view>
+    </view>
+  </view>
+</view>

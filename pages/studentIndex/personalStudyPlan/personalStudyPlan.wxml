@@ -1,0 +1,122 @@
+<!-- pages/studentIndex/personalStudyPlan/personalStudyPlan.wxml -->
+<view class="plan-container">
+  <!-- 学习目标编辑模块 -->
+  <view class="section-card">
+    <view class="section-header">
+      <text class="section-title">学习目标</text>
+      <button size="mini" bindtap="toggleEdit" data-type="goal">编辑</button>
+    </view>
+
+    <!-- 短期目标 -->
+    <view class="edit-group">
+      <text class="edit-label">短期目标（1-3个月）:</text>
+      <block wx:if="{{!edit.goal}}" >
+        <text>{{goals.shortTerm || '点击编辑按钮添加内容'}}</text>
+      </block>
+      <textarea 
+        wx:else
+        value="{{goals.shortTerm}}" 
+        placeholder="请输入短期目标（每行一个）"
+        bindinput="updateGoals" 
+        data-type="shortTerm"
+        auto-height
+      />
+    </view>
+
+    <!-- 长期目标 -->
+    <view class="edit-group">
+      <text class="edit-label">长期目标（学期/学年）:</text>
+      <block wx:if="{{!edit.goal}}">
+        <text>{{goals.longTerm || '点击编辑按钮添加内容'}}</text>
+      </block>
+      <textarea 
+        wx:else
+        value="{{goals.longTerm}}" 
+        placeholder="请输入长期目标（每行一个）"
+        bindinput="updateGoals" 
+        data-type="longTerm"
+        auto-height
+      />
+    </view>
+  </view>
+
+  <!-- 学习任务管理 -->
+  <view class="section-card">
+    <view class="section-header">
+      <text class="section-title">学习任务</text>
+      <button size="mini" bindtap="addNewTask">+ 添加任务</button>
+    </view>
+
+    <view wx:for="{{tasks}}" wx:key="index" class="task-item">
+      <view class="task-header">
+        <input 
+          placeholder="任务名称"
+          value="{{item.name}}"
+          bindinput="updateTaskField" 
+          data-index="{{index}}"
+          data-field="name"
+        />
+        <input 
+          type="date" 
+          value="{{item.deadline}}"
+          bindchange="updateTaskField"
+          data-index="{{index}}"
+          data-field="deadline"
+        />
+      </view>
+      
+      <textarea 
+        placeholder="任务要求"
+        value="{{item.requirements}}"
+        bindinput="updateTaskField" 
+        data-index="{{index}}"
+        data-field="requirements"
+        auto-height
+      />
+      
+      <view class="task-actions">
+        <button size="mini" bindtap="removeTask" data-index="{{index}}">删除</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 方法评估模块 -->
+  <view class="section-card">
+    <view class="section-header">
+      <text class="section-title">学习方法 & 自我评估</text>
+      <button size="mini" bindtap="toggleEdit" data-type="method">编辑</button>
+    </view>
+
+    <view class="edit-group">
+      <text class="edit-label">我的学习方法:</text>
+      <editor 
+        wx:if="{{edit.method}}"
+        placeholder="描述你的学习方法..."
+        bindinput="updateMethod"
+        value="{{studyMethod}}"
+      />
+      <rich-text 
+        wx:else
+        nodes="{{studyMethod || '点击编辑按钮添加内容'}}" 
+        bindtap="toggleEdit" 
+        data-type="method"
+      />
+    </view>
+
+    <view class="edit-group">
+      <text class="edit-label">最新评估:</text>
+      <textarea 
+        placeholder="记录你的学习进展..."
+        value="{{latestEvaluation}}"
+        bindinput="updateEvaluation"
+        auto-height
+        show-confirm-bar="{{false}}"
+      />
+    </view>
+  </view>
+
+  <!-- 保存按钮 -->
+  <view class="save-footer">
+    <button type="primary" bindtap="saveAllData">保存全部修改</button>
+  </view>
+</view>

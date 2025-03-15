@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #ffffff, #e6f7ff);
+  padding: 50rpx;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.textarea {
+  width: 90%;
+  height: 300rpx;
+  padding: 20rpx;
+  font-size: 32rpx;
+  border: 2rpx solid #dcdcdc;
+  border-radius: 15rpx;
+  background-color: #ffffff;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+  line-height: 1.5;
+  resize: none;
+  outline: none;
+}
+
+.textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10rpx #007bff;
+}
+
+.submit-button {
+  margin-top: 30rpx;
+  width: 90%;
+  height: 80rpx;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center;
+  line-height: 80rpx;
+  border: none;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:active {
+  transform: scale(0.98);
+  background: linear-gradient(to right, #0056b3, #003d80);
+}

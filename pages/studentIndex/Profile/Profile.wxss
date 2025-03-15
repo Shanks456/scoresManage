@@ -1,0 +1,59 @@
+/* pages/studentIndex/Profile/Profile.wxss */
+.profile-container {
+  padding: 20rpx;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.loading, .error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+}
+
+.icon-loading, .icon-error {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+}
+
+.btn-retry {
+  margin-top: 30rpx;
+  width: 200rpx;
+}
+
+.profile-card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.1);
+}
+
+.info-item {
+  display: flex;
+  margin: 24rpx 0;
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.label {
+  width: 160rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.value {
+  flex: 1;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.meta-info {
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  color: #888;
+  font-size: 24rpx;
+}

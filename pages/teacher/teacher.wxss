@@ -1,0 +1,33 @@
+/* pages/teacher/teacher.wxss */
+.container {
+  padding: 20px;
+}
+
+.subject-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.scores-list {
+  margin-top: 10px;
+}
+
+.table-header, .table-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.table-cell {
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.empty-state {
+  margin: 20px 0;
+  color: #999;
+  text-align: center;
+}

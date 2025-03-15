@@ -1,0 +1,94 @@
+/* pages/student/home/home.wxss */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-image {
+  width: 80%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+}
+
+.label {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.actions {
+  margin-top: 30px;
+  padding: 20px;
+  text-align: center;
+}
+
+.record-btn {
+  background-color: #3CC51F;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.count {
+  margin-top: 15px;
+}
+
+.t {
+  font-size: 16px;
+}
+
+.c {
+  display: flex;
+  align-items: center;
+}
+
+.count-number {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.message {
+  font-size: 14px;
+  color: #666;
+}

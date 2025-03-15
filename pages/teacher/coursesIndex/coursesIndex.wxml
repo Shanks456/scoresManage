@@ -1,0 +1,29 @@
+<!--pages/teacher/coursesIndex/coursesIndex.wxml-->
+<view class="title">学科成绩详情</view>
+
+<view class="divider"></view>
+
+
+<view wx:if="{{scores.length === 0}}" class="no-data">
+  当前学科暂无成绩数据
+</view>
+
+<view class="table-container" wx:if="{{scores.length > 0}}">
+  <!-- 表头 -->
+  <view class="table-header">
+    <view class="table-cell">学号</view>
+    <view class="table-cell">姓名</view>
+    <view class="table-cell">成绩</view>
+    <view class="table-cell">评语</view>
+  </view>
+
+  <!-- 数据行 -->
+  <block wx:for="{{scores}}" wx:key="studentId">
+    <view class="table-row">
+      <view class="table-cell">{{item.studentId}}</view>
+      <view class="table-cell">{{item.studentName}}</view>
+      <view class="table-cell">{{item.score}}</view>
+      <view class="table-cell">{{item.comment}}</view>
+    </view>
+  </block>
+</view>

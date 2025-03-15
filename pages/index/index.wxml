@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="title">成绩管理系统</view>
+
+  <!-- 账号输入 -->
+  <view class="form-group">
+    <input 
+      class="input" 
+      placeholder="请输入账号" 
+      bindinput="onAccountInput" 
+    />
+  </view>
+
+  <!-- 密码输入 -->
+  <view class="form-group">
+    <input 
+      class="input" 
+      placeholder="请输入密码" 
+      bindinput="onPasswordInput" 
+      type="password"
+    />
+  </view>
+
+  <!-- 角色选择器 -->
+  <view class="form-group">
+    <picker 
+      mode="selector" 
+      bindchange="onRoleChange" 
+      range="{{roleLabels}}"
+      value="{{roleIndex}}">
+      <view class="picker">
+        当前角色: {{roleLabels[roleIndex]}}
+      </view>
+    </picker>
+  </view>
+
+  <button class="login-button" bindtap="onSubmit">登录</button>
+
+  <!-- 注册按钮 -->
+  <button class="register-button" bindtap="onRegister">注册</button>
+</view>

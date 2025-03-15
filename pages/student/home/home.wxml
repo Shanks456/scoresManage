@@ -1,0 +1,50 @@
+<!-- pages/student/home/home.wxml -->
+<view class="page">
+  <!-- 页头部分 -->
+  <view class="header">
+    <text class="header-title">学生首页内容</text>
+   
+    <image src="/pages/images/9.png" mode="aspectFill" class="header-image" />
+    <custom-tab-bar 
+      selected="{{currentTab}}" 
+      color="#000000" 
+      selectedColor="#3CC51F" 
+      list="{{studentTabItems}}"
+      bind:change="onTabChange" />
+  </view>
+
+  <!-- 功能按钮区 -->
+  <view class="container">
+    <view class="row">
+      <view class="item" bindtap="onNavigate" data-url="/pages/studentIndex/personalStudyPlan/personalStudyPlan">
+  <image src="/pages/images/9.png" class="icon"></image>
+  <text class="label">个人学习计划</text>
+</view>
+<view class="item" bindtap="onNavigate" data-url="/pages/student/courses/courses">
+  <image src="/pages/images/9.png" class="icon"></image>
+  <text class="label">成绩查询</text>
+</view>
+      <view class="item" bindtap="onNavigate" data-url="/pages/studentIndex/Profile/Profile">
+        <image src="/pages/images/9.png" class="icon"></image>
+        <text class="label">个人资料</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 学生成绩统计信息 -->
+  <view class="actions">
+    <button type="default" class="record-btn" bindtap="onTapButton">查看成绩</button>
+    <view class="count">
+      <view class="t">
+        <text>累计考试</text>
+      </view>
+      <view class="c">
+        <text class="count-number">5</text>
+        <text>次</text>
+      </view>
+      <view class="s">
+        <text class="message">加油！继续努力！</text>
+      </view>
+    </view>
+  </view>
+</view>

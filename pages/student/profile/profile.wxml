@@ -1,0 +1,19 @@
+<!--pages/student/profile/profile.wxml-->
+
+
+<image src="/pages/images/studentMind.png" class="avater" bindtap="onImageTap" />
+<view class="about" bindtap="about">关于我们</view>
+<view class="anounce" bindtap="anounce">公告</view>
+<view class="suggest" bindtap="suggest">反馈与建议</view>
+
+ <view class="feature-item" bindtap="contactService">
+      <view class="icon icon-service"></view>
+      <view class="feature-text">联系客服</view>
+      <view class="contact-tip">9:00-18:00</view>
+      <view class="badge-new">NEW</view>
+    </view>
+  
+<view class="feature-item" bindtap="showLogoutOptions">
+  <view class="icon icon-logout"></view>
+  <view class="feature-text">退出登录</view>
+</view>

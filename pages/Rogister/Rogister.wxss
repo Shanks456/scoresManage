@@ -1,0 +1,190 @@
+/* pages/Register/Register.wxss */
+.container {
+  padding: 40rpx;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: linear-gradient(45deg, 
+    rgba(255,228,225,0.1) 0%, 
+    rgba(240,248,255,0.2) 50%,
+    rgba(224,255,255,0.1) 100%);
+  transform: rotate(-5deg);
+  z-index: 0;
+}
+
+.title {
+  font-size: 52rpx;
+  font-weight: 800;
+  margin: 60rpx 0;
+  color: #2c3e50;
+  position: relative;
+  text-shadow: 2rpx 2rpx 4rpx rgba(0,0,0,0.1);
+  letter-spacing: 2rpx;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 60rpx;
+  height: 4rpx;
+  background: #6c5ce7;
+  margin: 10rpx auto;
+  border-radius: 2rpx;
+}
+
+.form-group {
+  width: 85%;
+  margin-bottom: 36rpx;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.form-group:active {
+  transform: scale(0.98);
+}
+
+.input {
+  width: 100%;
+  height: 100rpx;
+  padding: 0 100rpx 0 40rpx;
+  border: none;
+  border-radius: 16rpx;
+  font-size: 30rpx;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(20rpx);
+  box-shadow: 0 8rpx 24rpx rgba(108,92,231,0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:focus {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 12rpx 32rpx rgba(108,92,231,0.15);
+  padding-right: 40rpx;
+}
+
+.input-icon {
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a8a8a8;
+  font-size: 36rpx;
+  transition: all 0.3s ease;
+}
+
+.input:focus + .input-icon {
+  color: #6c5ce7;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.picker {
+  width: 100%;
+  height: 100rpx;
+  padding: 0 40rpx;
+  border-radius: 16rpx;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(20rpx);
+  box-shadow: 0 8rpx 24rpx rgba(108,92,231,0.08);
+  display: flex;
+  align-items: center;
+  color: #2c3e50;
+  font-size: 30rpx;
+  position: relative;
+}
+
+.picker::after {
+  content: "→";
+  position: absolute;
+  right: 30rpx;
+  color: #a8a8a8;
+  font-size: 36rpx;
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+}
+
+.picker:active::after {
+  transform: rotate(90deg) translateX(10rpx);
+}
+
+.register-button {
+  width: 85%;
+  height: 100rpx;
+  background: linear-gradient(135deg, #6c5ce7, #a363d9);
+  color: white;
+  border: none;
+  border-radius: 16rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+  margin-top: 60rpx;
+  box-shadow: 0 8rpx 24rpx rgba(108,92,231,0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.register-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(45deg) translateY(-150%);
+  transition: all 0.6s ease;
+}
+
+.register-button:active::after {
+  transform: rotate(45deg) translateY(50%);
+}
+
+.register-button:active {
+  transform: scale(0.96);
+  box-shadow: 0 4rpx 12rpx rgba(108,92,231,0.3);
+}
+
+/* 动态提示效果 */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10rpx); }
+  100% { transform: translateY(0); }
+}
+
+.register-button {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 选填项样式 */
+.input[placeholder*="选填"] {
+  background: rgba(245,245,245,0.8);
+}
+
+.input[placeholder*="选填"]::placeholder {
+  color: #b0b0b0;
+  font-style: italic;
+}
+
+/* 必填项标识 */
+.form-group:not(:has([placeholder*="选填"]))::before {
+  content: "•";
+  color: #6c5ce7;
+  position: absolute;
+  left: 16rpx;
+  top: 36rpx;
+  font-size: 40rpx;
+  z-index: 2;
+}

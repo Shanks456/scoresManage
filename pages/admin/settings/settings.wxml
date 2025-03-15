@@ -1,0 +1,7 @@
+<!--pages/admin/settings/settings.wxml-->
+<view class="avatar">
+<image src="/pages/images/1.png" />
+</view>
+<view class="about" bindtap="about">关于我们</view>
+<view class="anounce" bindtap="anounce">公告</view>
+<view class="suggest" bindtap="suggest">反馈与建议</view>

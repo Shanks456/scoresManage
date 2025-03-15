@@ -1,0 +1,9 @@
+<view>
+  <text>管理员首页内容</text>
+  <custom-tab-bar 
+    selected="{{currentTab}}" 
+    color="#000000" 
+    selectedColor="#3CC51F" 
+    list="{{adminTabItems}}"
+    bind:change="onTabChange" />
+</view>

@@ -1,0 +1,37 @@
+<!--pages/about/about.wxml-->
+<view class="container">
+  <!-- 标题 -->
+  <view class="title">关于我们</view>
+
+  <view class="divider"></view>
+
+  <!-- 内容区块 -->
+  <view class="content">
+    <text>
+      我们是一支致力于高校学生成绩管理的专业团队，旨在提供高效、便捷的成绩管理解决方案。
+      我们的系统通过创新技术，帮助高校教师轻松录入、查询和分析学生成绩，提升教学管理效率。
+      同时，我们重视用户体验，界面友好、操作简便，确保教师和学生都能快速上手。
+      我们的目标是为高校提供全面的数据支持，促进教育质量的提升，助力学生的全面发展。
+      我们相信，通过科技的助力，教育管理将更加高效、透明，为每一位学生的成长提供坚实保障。
+    </text>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 联系方式 -->
+  <view class="contact">
+    <view class="contact-title">联系我们</view>
+    <view class="contact-item">
+      <text class="contact-label">邮箱：</text>
+      <text class="contact-value">support@ourteam.com</text>
+    </view>
+    <view class="contact-item">
+      <text class="contact-label">电话：</text>
+      <text class="contact-value">400-123-4567</text>
+    </view>
+    <view class="contact-item">
+      <text class="contact-label">官网：</text>
+      <text class="contact-value">www.ourteam.com</text>
+    </view>
+  </view>
+</view>

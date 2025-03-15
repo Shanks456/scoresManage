@@ -1,0 +1,46 @@
+/* pages/grades/grades.wxss */
+.container {
+  padding: 20px;
+}
+
+.student.information, .subject.information {
+  margin-bottom: 20px; /* 每个部分之间的间距 */
+}
+
+.table {
+  margin-bottom: 15px; /* 表格与其他内容之间的间距 */
+}
+
+.table-header, .table-row {
+  display: flex; /* 使用 flexbox 布局 */
+  align-items: center; /* 垂直居中对齐 */
+  margin-bottom: 10px; /* 行间距 */
+}
+
+.header-cell, .cell, .subject.name {
+  width: 100px; /* 设置固定宽度 */
+  margin-right: 10px; /* 标签与输入框之间的间距 */
+}
+
+/* pages/index/index.wxss */
+
+
+/* pages/index/index.wxss */
+.subject.information ,.grades.information{
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中对齐 */
+  margin: 10px 0; /* 添加上下间距 */
+}
+
+.subject.name , .grades{
+  margin-right: 10px; /* 学科名称和输入框之间的间距 */
+  font-weight: bold; /* 可选：加粗显示学科名称 */
+}
+
+.input {
+  flex: 1; /* 输入框占据剩余空间 */
+  border: 1px solid #ccc; /* 添加边框 */
+  padding: 5px; /* 添加内边距 */
+  border-radius: 4px; /* 圆角边框 */
+}
+

@@ -1,0 +1,39 @@
+<!-- pages/grades/grades.wxml -->
+<text>标有<text style="color: red; font-weight: bold;">*</text>号是必填项，其他是选填项</text>
+<view class="container">
+  <view class="student information">
+    <view class="table">
+      <view class="table-header">
+        <text class="header-cell"> <text style="color: red; font-weight: bold;">*</text>学生姓名</text>
+        <input class="input" type="text" placeholder="请输入学生姓名" bindinput="onNameInput" />
+      </view>
+      <view class="table-row">
+        <text class="cell"> <text style="color: red; font-weight: bold;">*</text>年级</text>
+        <input class="input" type="text" placeholder="请输入年级" bindinput="onGradeInput" />
+      </view>
+      <view class="table-row">
+        <text class="cell"> <text style="color: red; font-weight: bold;">*</text>学期</text>
+        <input class="input" type="text" placeholder="请输入学期" bindinput="onTermInput" />
+      </view>
+      <view class="table-row">
+        <text class="cell"> <text style="color: red; font-weight: bold;">*</text>年度</text>
+        <input class="input" type="text" placeholder="请输入年度" bindinput="onYearInput" />
+      </view>
+    </view>
+  </view>
+  
+  <text>学科信息</text>
+  <view class="subject information">
+    <text class="subject name"> <text style="color: red; font-weight: bold;">*</text>学科名称</text>
+    <input class="input" type="text" placeholder="请输入学科名称" bindinput="onSubjectInput" />
+  </view>
+  
+  <view class="grades information">
+    <text class="grades"> <text style="color: red; font-weight: bold;">*</text>成绩</text>
+    <input class="input" type="text" placeholder="请输入成绩" bindinput="onScoreInput" />
+  </view>
+  
+  <view class="container">
+    <button bindtap="onSubmit">提交成绩</button>
+  </view>
+</view>

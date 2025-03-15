@@ -1,0 +1,102 @@
+.container {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn-group {
+  display: flex;
+}
+
+.edit-btn, .save-btn, .cancel-btn {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-left: 10px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 10px 0;
+}
+
+.empty-wrapper {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.empty-img {
+  width: 100px;
+  height: 100px;
+}
+
+.empty-text {
+  font-size: 18px;
+  color: #888;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.rules-box {
+  margin-top: 15px;
+}
+
+.rules-title {
+  font-weight: bold;
+}
+
+.rule-item {
+  margin: 5px 0;
+}
+
+.footer {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+.operation-tips {
+  margin-top: 20px;
+  color: #ff5722;
+  font-weight: bold;
+}
+
+.form-item {
+  margin: 10px 0;
+}
+
+.edit-input, .rule-input, .edit-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.counter {
+  text-align: right;
+  color: #aaa;
+}
+
+.add-rule-btn {
+  margin-top: 10px;
+  color: #007aff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

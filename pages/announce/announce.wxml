@@ -1,0 +1,150 @@
+<!-- pages/announce/announce.wxml -->
+<view class="container">
+  <!-- 头部区域 -->
+  <view class="header">
+    <view class="title">{{isAdmin ? '公告管理' : '系统公告'}}</view>
+    
+    <!-- 管理员操作按钮组 -->
+    <view wx:if="{{isAdmin}}" class="btn-group">
+      <button 
+        class="{{isEditing ? 'cancel-btn' : 'edit-btn'}}" 
+        bindtap="{{isEditing ? 'cancelEdit' : 'startEdit'}}"
+      >
+        {{isEditing ? '取消修改' : '修改公告'}}
+      </button>
+      <button 
+        wx:if="{{isEditing}}" 
+        class="save-btn" 
+        bindtap="saveAnnouncement"
+        form-type="submit"
+      >
+        保存公告
+      </button>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 内容区域 -->
+  <view class="content">
+    <!-- 非编辑状态显示 -->
+    <block wx:if="{{!isEditing}}">
+      <!-- 默认提示 -->
+      <view wx:if="{{!currentContent.body}}" class="empty-wrapper">
+        <image src="/pages/images/2.png" class="empty-img" />
+        <text class="empty-text">暂无公告内容</text>
+      </view>
+
+      <!-- 公告内容 -->
+      <block wx:else>
+        <view class="greeting">{{currentContent.greeting}}</view>
+        <view class="content-body">{{currentContent.body}}</view>
+        
+        <!-- 规则列表 -->
+        <view wx:if="{{currentContent.rules.length}}" class="rules-box">
+          <view class="rules-title">重要规则：</view>
+          <view class="rules-list">
+            <block wx:for="{{currentContent.rules}}" wx:key="index">
+              <view class="rule-item">{{index + 1}}. {{item}}</view>
+            </block>
+          </view>
+        </view>
+
+        <view class="footer">
+          <view class="ending">{{currentContent.ending}}</view>
+          <view class="signature">—— {{currentContent.signature}}</view>
+        </view>
+      </block>
+    </block>
+
+    <!-- 编辑状态表单 -->
+    <block wx:else>
+      <form bindsubmit="saveAnnouncement">
+        <!-- 问候语 -->
+        <view class="form-item">
+          <input 
+            class="edit-input" 
+            placeholder="请输入问候语（如：亲爱的同学们）" 
+            value="{{editableContent.greeting}}" 
+            name="greeting"
+            maxlength="50"
+          />
+          <view class="counter">{{editableContent.greeting.length}}/50</view>
+        </view>
+
+        <!-- 正文内容 -->
+        <view class="form-item">
+          <textarea 
+            class="edit-textarea" 
+            placeholder="请输入公告正文内容" 
+            value="{{editableContent.body}}" 
+            name="body"
+            maxlength="2000"
+            auto-height
+          />
+          <view class="counter">{{editableContent.body.length}}/2000</view>
+        </view>
+
+        <!-- 动态规则列表 -->
+        <view class="rules-editor">
+          <view class="format-tips">
+  <text>每条规则请单独输入，系统会自动保存为列表格式</text>
+  <text>示例：["必须携带学生证", "填写健康表格"]</text>
+</view>
+          <view class="sub-title">管理规定列表：</view>
+          <block wx:for="{{editableContent.rules}}" wx:key="index">
+            <view class="rule-editor-item">
+              <input 
+                class="rule-input" 
+                placeholder="请输入第{{index + 1}}条规则" 
+                value="{{item}}" 
+                data-index="{{index}}"
+                bindinput="ruleInput"
+                maxlength="100"
+              />
+              <view class="rule-operations">
+                <text 
+                  class="iconfont icon-delete" 
+                  bindtap="deleteRule" 
+                  data-index="{{index}}"
+                ></text>
+              </view>
+            </view>
+          </block>
+          <button class="add-rule-btn" bindtap="addRule" type="text">
+            <text class="iconfont icon-add"></text> 新增规则
+          </button>
+        </view>
+
+        <!-- 结尾内容 -->
+        <view class="form-item">
+          <textarea 
+            class="edit-textarea" 
+            placeholder="请输入结尾内容" 
+            value="{{editableContent.ending}}" 
+            name="ending"
+            maxlength="200"
+          />
+          <view class="counter">{{editableContent.ending.length}}/200</view>
+        </view>
+
+        <!-- 管理员签名 -->
+        <view class="form-item">
+          <input 
+            class="edit-input" 
+            placeholder="管理员签名（如：教务处）" 
+            value="{{editableContent.signature}}" 
+            name="signature"
+            maxlength="20"
+          />
+          <view class="counter">{{editableContent.signature.length}}/20</view>
+        </view>
+      </form>
+    </block>
+  </view>
+
+  <!-- 操作提示 -->
+  <view wx:if="{{showTips}}" class="operation-tips">
+    <text class="tips-text">{{operationTips}}</text>
+  </view>
+</view>

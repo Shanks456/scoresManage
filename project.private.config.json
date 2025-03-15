@@ -1,0 +1,99 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "gradesManager",
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/teacherIndex/studentManagement/studentManagement",
+          "pathName": "pages/teacherIndex/studentManagement/studentManagement",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/student/courses/courses",
+          "pathName": "pages/teacher/courses/courses",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/teacherIndex/update/update",
+          "pathName": "pages/teacherIndex/update/update",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/teacherIndex/addStudent/addStudent",
+          "pathName": "pages/teacherIndex/addStudent/addStudent",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/teacherIndex/update/update",
+          "pathName": "pages/teacherIndex/update/update",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/teacherIndex/studentManagement/studentManagement",
+          "pathName": "pages/teacherIndex/studentManagement/studentManagement",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/grades/grades",
+          "pathName": "pages/grades/grades",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/suggest/suggest",
+          "pathName": "pages/suggest/suggest",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/admin/home/home",
+          "pathName": "pages/admin/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/teacher/home/home",
+          "pathName": "pages/teacher/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/student/home/home",
+          "pathName": "pages/student/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "libVersion": "trial"
+}

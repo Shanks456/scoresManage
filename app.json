@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/student/home/home",
+    "pages/student/courses/courses",
+    "pages/student/profile/profile",
+    "pages/teacher/home/home",
+    "pages/teacher/courses/courses",
+    "pages/teacher/profile/profile",
+    "pages/admin/home/home",
+    "pages/admin/users/users",
+    "pages/admin/settings/settings",
+    "pages/about/about",
+    "pages/announce/announce",
+    "pages/suggest/suggest",
+    "pages/grades/grades",
+    "pages/teacherIndex/studentManagement/studentManagement",
+    "pages/teacherIndex/addStudent/addStudent",
+    "pages/teacherIndex/inputtingGrades/inputtingGrades",
+    "pages/teacherIndex/update/update",
+    "pages/teacher/coursesIndex/coursesIndex",
+    "pages/studentIndex/Profile/Profile",
+    "pages/studentIndex/personalStudyPlan/personalStudyPlan",
+    "pages/Rogister/Rogister"
+  ],
+  "window": {
+    "navigationBarTitleText": "成绩管理系统"
+  }
+}
